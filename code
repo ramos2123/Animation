@@ -1,0 +1,51 @@
+import simplegui
+x = -50
+y = -50
+def draw_handler(canvas):
+    global x
+    global y
+    x = x + 1
+    if x < 300:
+        canvas.draw_circle((300, 100), 40, 1, "White", "White")
+        canvas.draw_circle((330, 100), 40, 1, "Black", "Black")
+        canvas.draw_polygon([(0, 400), (400, 400), (400, 600), (0, 600)], 1, "Green" ,"Green")
+        canvas.draw_polygon([(400, 400), (600, 400), (600, 600), (400, 600)], 1, "Green" ,"Green")
+        canvas.draw_polygon([(0, 490), (300, 490), (300, 400), (0, 400)], 1, "Grey" ,"Grey")
+        canvas.draw_polygon([(300, 440), (600, 440), (600, 400), (300, 400)], 1, "Grey" ,"Grey")
+        canvas.draw_polygon([(0, 460), (260, 460), (260, 440), (0, 440)], 1, "Yellow" ,"Yellow")
+        canvas.draw_circle((x, 400), 15, 1, "White", "White")# carparts 15-18
+        canvas.draw_circle((x-100, 400), 15, 1, "White", "White")
+        canvas.draw_polygon([(x-120, 385), (x-120, 340), (x+20, 340), (x+20, 385)], 1, "Red" ,"Red")
+        canvas.draw_polygon([(x-40, 340), (x-40, 310), (x+20, 310), (x+20, 340)], 1, "Yellow" ,"Yellow")
+        canvas.draw_line((340, 400),(560, 400), 3, "Red")# House 19-25
+        canvas.draw_line((340, 230),(340, 400), 3, "Red")# done
+        canvas.draw_line((560, 230),(560, 400), 3, "Red")# done
+        canvas.draw_line((340, 230),(560, 230), 3, "Red")# done
+        canvas.draw_polygon([(590, 230), (430, 115), (300, 235), (590, 230)], 1, "Blue" ,"blue")# done
+        canvas.draw_polygon([(410, 400), (410, 310), (480, 310), (480, 400)], 1, "Orange" ,"Orange")
+        canvas.draw_polygon([(500, 360), (500, 310), (540, 310), (540, 360)], 1, "Yellow" ,"Yellow")
+       
+    else:
+        canvas.draw_circle((300, 100), 40, 1, "White", "White")
+        canvas.draw_circle((330, 100), 40, 1, "Black", "Black")
+        canvas.draw_polygon([(0, 400), (400, 400), (400, 600), (0, 600)], 1, "Green" ,"Green")
+        canvas.draw_polygon([(400, 400), (600, 400), (600, 600), (400, 600)], 1, "Green" ,"Green")
+        canvas.draw_polygon([(0, 490), (300, 490), (300, 400), (0, 400)], 1, "Grey" ,"Grey")
+        canvas.draw_polygon([(300, 440), (600, 440), (600, 400), (300, 400)], 1, "Grey" ,"Grey")
+        canvas.draw_polygon([(0, 460), (260, 460), (260, 440), (0, 440)], 1, "Yellow" ,"Yellow")
+        canvas.draw_circle((275, 400), 15, 1, "White", "White")# carparts 26-29
+        canvas.draw_circle((160, 400), 15, 1, "White", "White")
+        canvas.draw_polygon([(300, 385), (300, 340), (130, 340), (130, 385)], 1, "Red" ,"Red")
+        canvas.draw_polygon([(300, 340), (300, 310), (240, 310), (240, 340)], 1, "Grey" ,"Grey")
+        canvas.draw_line((340, 400),(560, 400), 3, "Red")# House 19-25
+        canvas.draw_line((340, 230),(340, 400), 3, "Red")# done
+        canvas.draw_line((560, 230),(560, 400), 3, "Red")# done
+        canvas.draw_line((340, 230),(560, 230), 3, "Red")# done
+        canvas.draw_polygon([(590, 230), (430, 115), (300, 235), (590, 230)], 1, "Blue" ,"blue")# done
+        canvas.draw_polygon([(410, 400), (410, 310), (480, 310), (480, 400)], 1, "Orange" ,"Orange")
+        canvas.draw_polygon([(500, 360), (500, 310), (540, 310), (540, 360)], 1, "Yellow" ,"Yellow")
+        
+frame = simplegui.create_frame('Animation', 600, 600)
+frame.set_canvas_background("Black")
+frame.set_draw_handler(draw_handler)
+frame.start()
